@@ -20,5 +20,15 @@ namespace WebApiBusinessTest
 
             Assert.IsTrue(isAuthenticated);
         }
+
+        [TestCase]
+        public void Test_ValidateUser_NoAuthenticated()
+        {
+            var userBusiness = new UserBusiness();
+
+            var isAuthenticated = userBusiness.IsAuthenticated("", "");
+
+            Assert.IsFalse(isAuthenticated);
+        }
     }
 }
